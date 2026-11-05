@@ -8,7 +8,7 @@ source("plotting/validation_plots_gpp.R")
 
 # power-law reference lines coef * r^power for the ball count plot
 ball_count_refs_dpp <- data.frame(
-  label = c("r^2", "r"), power = c(2, 1), coef = c(3.5, 10),
+  label = c("r^2", "r"), power = c(2, 1), coef = c(1.75, 5),
   from = c(0.5, 3), to = c(3, 15),
   label_x = c(1.1, 6), label_mult = c(1.8, 1.5)
 )

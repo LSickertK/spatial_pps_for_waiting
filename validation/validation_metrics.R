@@ -101,9 +101,11 @@ nn_distance_kde <- function(pp_sets, k = 1, range = c(0, 5), adjust = 1, n = 512
   }))
 }
 
-# ball count of each point for each radius: matrix (points x radii).
+# ball count of each point for each radius: matrix (points x radii), i.e. the
+# number of other points within distance r. closepairs() lists each pair once
+# (twice = FALSE), and the pair counts as a neighbour of both of its points.
 neighbour_counts <- function(pp, r) {
-  cp <- closepairs(pp, rmax = max(r), what = "ijd")
+  cp <- closepairs(pp, rmax = max(r), twice = FALSE, what = "ijd")
   matrix(vapply(r, function(ri) {
     close <- cp$d <= ri
     tabulate(c(cp$i[close], cp$j[close]), nbins = npoints(pp))

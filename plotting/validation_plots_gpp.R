@@ -85,7 +85,7 @@ plot_nn_density <- function(df, k = 1, tag = NULL) {
 
 # power-law reference lines coef * r^power for the ball count plot
 ball_count_refs <- data.frame(
-  label = c("r^2", "r"), power = c(2, 1), coef = c(2, 10),
+  label = c("r^2", "r"), power = c(2, 1), coef = c(1, 5),
   from = c(0.5, 6), to = c(5, 30),
   label_x = c(1.1, 12), label_mult = c(1.8, 1.5)
 )
